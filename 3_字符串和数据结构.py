@@ -1,3 +1,4 @@
+
 # 字符串
 s1 = 'hello word'
 print(s1)
@@ -47,7 +48,7 @@ print(f'{a} * {b} = {a*b}') # 语法糖的形式，即前面加个f即可。括�
 
 
 '''
-列表list
+列表list.可变容器
 
 '''
 list1 = [1, 3, 5, 7, 100]
@@ -95,12 +96,91 @@ print(list5)
 list2.sort() #sort是在原list上进行排序，注意和sorted区别
 print(list2)
 
-# 生成式和生成器
+# 生成式.整个列表都存在内存中
 # 列表生成式，即通过循环后，然后进行计算生成列表
 f = [x*x for x in range(10)]  #循环的每个元素，在自乘，组成列表
 print(f)
 f1 = [a+b for a in 'abc' for b in '12345'] # 每一个a和每一个b,进行加法运算，组成列表
 print(f1)
+
+# 为了节省空间。在Python中，这种一边循环一边计算的机制，称为生成器：generator。
+g = (x*x for x in range(10))
+print(g) # generator对象
+# 利用for循环得到具体的值
+for n in g:
+	print(n)
+
+# 如果一个函数定义中包含yield关键字，那么这个函数就不再是一个普通函数，而是一个generator：
+def odd():
+    print('step 1')
+    yield 1
+    print('step 2')
+    yield(3)
+    print('step 3')
+    yield(5)
+# 此时gg就是一个generator
+gg = odd()
+
+for ii in gg:
+	print(ii)
+
+
+
+'''
+元组 不可变容器
+和list类似，但是不能修改
+
+'''
+t = ('佟力', 30, True, '郑州')
+print(t)
+print(t[0]) # 获取元组的值
+print(t[:2]) # 切片
+# 遍历
+for member in t:
+	print(member)
+
+# 元组转换成列表，tuple->list
+list11 = list(t)
+print(list11)
+
+# 列表转换成元组，list->tuple
+tuple1 = tuple(list11)
+print(tuple1)
+
+
+'''
+字典 可变容器
+'''
+# 创建1
+scores = {'元芳':78, '狄仁杰':99, 'lisa':86}
+# 创建2 dict(key=value,)
+item1 = dict(one=1, two=2, three=3)
+print(item1)
+# 创建3 利用zip函数将两个序列压成字典
+item2 = dict(zip(['a','b','c'],[1,2,3]))
+print(item2)
+
+print(scores['元芳']) # 访问
+# 遍历
+for key in scores.keys(): #.keys()可以不写，遍历默认是keys
+	print(key)
+
+for value in scores.values():
+	print(value)
+
+for key,value in scores.items():
+	print(key,value)
+print('---')
+# 删除
+print(scores.pop('元芳')) # 通过key删除，返回的是删除对应的value
+print(scores) # 打印删除后的字典
+
+scores.clear() # 清空
+
+
+
+
+
 
 
 
