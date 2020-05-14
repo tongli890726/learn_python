@@ -176,11 +176,3 @@ print(scores.pop('元芳')) # 通过key删除，返回的是删除对应的value
 print(scores) # 打印删除后的字典
 
 scores.clear() # 清空
-
-
-
-
-
-
-
-
