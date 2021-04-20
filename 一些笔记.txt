@@ -3,6 +3,6 @@
 2、类方法 
 3、单例模式
 4、廖雪峰 面向对象高级编程
-5、生成式
+5、生成式 map reduce filter 匿名函数 装饰器(@property) 拆包 闭包 
 6、yield
-7、装饰器 @property
+8、网络编程
