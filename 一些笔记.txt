@@ -6,3 +6,4 @@
 5、生成式 map reduce filter 匿名函数 装饰器(@property) 拆包 闭包 
 6、yield
 8、网络编程
+9、调试中的断言
