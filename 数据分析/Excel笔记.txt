@@ -1,0 +1,110 @@
+----------------------- 常用函数 -----------------------
+一、清洗处理类
+	1、Trim(cell) 前后去空格
+	eg:
+	=TRIM(A2)
+	
+	2、concatenate(cell, cell,...) 多个单元格内容合并
+	eg:
+	=CONCATENATE(D21,E21) #将D21和E21内容合并
+
+	3、replace(旧cell，startIndex(起始是1), num(要替换的长度), "新字符串") 用新的字符串替换老的字符串位置
+	eg:
+	=REPLACE(F7,1,4,"****") 将F7的文本，从第一个长度是4的位置，替换成****字符串
+
+	4、substitute(cell, 要替换的字符串, 替换的字符串, 要替换第几个)
+	eg:
+	=SUBSTITUTE(F7,"大","**") 将F7中的文本，字符串是"大"的，替换长"**",次数不限
+
+	5、left/right/Mid 字符串截取，
+	eg:
+	=LEFT(F2,2) #截取F2文本的前两个字符
+	=RIGHT(F2,2) # 截取F2文本的后两个字符
+	=MID(F2,1,4) # 截取F2文本从1长度是4的字符1，2
+
+	6、Len/lenb  Len是字符串的长度，lenb是字节的长度(汉字，中文标点符号长度是2)
+	eg:
+	=LENB(E19)
+	=LENB(E19)
+	
+	7、search("要查找的文字", 字符串所在的文本, 从第几个字符开始查找) 查找指定文本的位置
+	eg:
+	=SEARCH("风",F7) # 在F7这个文本中，查找"风"这个字的位置，开始位置省略就是从第一个字符开始查找
+	
+	8、text(value,format_text）将value变成字符串，format_text是文本格式
+
+
+二、关键匹配类
+	1、lookup
+
+	2、Vlookup
+	eg:
+	=VLOOKUP("a",E25:F29,2) 在E25:F29区域内，第一列是"a"的那一行，第2列的数值
+
+	3、index(选择区域, 行, 列)在指定区域内，某行某列的文本
+	eg:
+	=INDEX(D16:E21,1,2) 在D16:E21这个区域内，第1行和第2列的文本
+	
+	4、match
+	
+	5、row(cell, 或者区域) 返回cell所在的行,如果是区域返回第一行的行数
+	eg:
+	=ROW(D15:D17)
+	
+	6、column 是返回列数，类似于上面的行
+	
+	7、offset
+三、逻辑运算类
+	1、if
+	2、and
+	3、or
+	4、is
+四、计算统计类
+	1、Sum／Sumif(条件区域, 求和条件, 实际求和区域)／Sumifs(实际求和区域, 第一个条件区域，第一个求和条件，第二个条件区域，第二个求和条件...) 
+	eg: 
+	=SUMIF(F25:F35,I25,G25:G35) 在条件区域内F25:F35中，具体条件是I25。在G25:G35中，符合I25条件的值求和
+	=SUMIFS(C2:C13,A2:A13,D2,B2:B13,"<=2014-9-15")
+
+	2、Sumproduct 几个区域对应关系相乘，并返回所有乘积的和
+	eg:
+	=SUMPRODUCT(A28:B31,C28:D31)两个区域，对应位置相乘，然后相加
+
+	3、Count／Countif／Countifs
+	eg:
+	=COUNTIF(G25:G35,">=10") 在G25:G35区域内，符合>=10这个条件的个数
+	=COUNTIFS(F25:F35,"电脑",G25:G35,">5") 在F25:F35区域内,符合条件是"电脑",且在G25:G35区域内符合">5"的条目个数
+
+	4、Max / Min 最大最小值
+
+	5、Rank
+	eg:
+	=RANK(G27,G25:G35,1) G27在G25:G35这个区域内的排序名次，1是正序 0是倒序
+
+	6、Rand／Randbetween
+	eg:
+	=RAND()自动返回大于等于0并且小于1的随机数
+	=RANDBETWEEN(1, 10) 自动返回1到10的随机数
+
+	7、Averagea
+	eg:
+	=AVERAGEA(G25:G27) 平均值
+
+	8、Stdev 标准偏差
+
+	9、Substotal
+	
+	10、Int／Round
+	eg:
+	INT(10.9) 结果是10
+	ROUND(3.1415926,2) 四舍五入保留两位小数
+
+五、时间序列
+	1、Year 获取年
+	2、Month 获取月
+	3、Weekday 
+	4、Weeknum
+	5、Day
+	6、Date
+	7、Now
+	8、Today
+	9、Datedif
